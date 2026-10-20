@@ -1,0 +1,15 @@
+# 작업 계획 실행. LLM은 단계 목록만 만들고, 실행은 Task Manager가 Nav2 / PickPlace / MoveIt으로 한다.
+string utterance         # 원문 지령
+string summary           # 계획 요약 한 문장
+PlanStep[] steps
+---
+bool success
+string message
+string spoken            # 사용자에게 보여 줄 결과 문장
+int32 steps_done         # 성공한 단계 수
+int32 failed_step        # 실패한 단계 번호 (0 부터), 없으면 -1
+---
+int32 step               # 현재 단계 (0 부터)
+int32 total
+string action
+string detail
