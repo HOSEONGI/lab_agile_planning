@@ -1,0 +1,5 @@
+# 이름 있는 장소 목록 (locations.yaml). 대시보드·LLM 프롬프트가 사용.
+---
+string[] names
+geometry_msgs/Pose2D[] poses   # map 좌표 (x, y, theta)
+string[] descriptions

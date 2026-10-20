@@ -1,0 +1,15 @@
+# 운반 스킬. phase=pick: station에서 object를 집어 든 채 끝남 / phase=place: 든 물체를 station에 놓기
+# 두 phase 모두 사전 도킹 주행(Nav2) → ArUco 도킹 → 작업 순서로 진행한다.
+string phase             # pick | place
+string object            # pick: 색 이름 (red|blue|yellow). place: 비우면 들고 있는 물체
+string station           # locations.yaml 의 작업대 이름 (pickup_station | drop_station)
+string arm               # left | right | 비우면 자동
+---
+bool success
+string message
+string phase_reached     # 마지막으로 성공한 세부 단계
+float32 duration_s
+---
+string stage             # approach | dock | locate | pre_grasp | grasp | lift | carry | pre_place | release | retreat
+float32 progress         # 0..1
+string detail
